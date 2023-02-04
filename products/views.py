@@ -25,7 +25,7 @@ def product_detail(request, pk):
         serializer = ProductSerializer(product)
         return Response(serializer.data)
     elif request.method == 'PUT':        
-        serializer = ProductSerializer(product_detail, data = request.data)
+        serializer = ProductSerializer(product, data = request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
